@@ -76,4 +76,8 @@ select option {
     .prayer {
         width: 100%;
     }
+
+    .nextTime span {
+        font-size: 40px;
+    }
 }
