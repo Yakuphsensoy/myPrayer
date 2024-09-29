@@ -123,20 +123,15 @@ export default function PrayerTimes() {
     }
 
     function formatTime(minute) {
-
-        const hour = Math.floor(Number(minute / 60));
+        const hour = Math.floor(Number(minute) / 60);
         const leftMinutes = minute % 60;
 
-        if (hour > 0 && leftMinutes > 0) {
-            return `${hour}:${leftMinutes}`
-        }
-        if (hour > 0 && leftMinutes === 0) {
-            return `${hour}:00`
-        }
-        if (leftMinutes > 0 && hour === 0) {
-            return `00:${leftMinutes}`
-        }
+        const formattedHour = String(hour).padStart(2, '0');
+        const formattedMinutes = String(leftMinutes).padStart(2, '0');
+
+        return `${formattedHour}:${formattedMinutes}`;
     }
+
 
     useEffect(() => {
         async function fetchPrayerTimes() {
@@ -202,7 +197,7 @@ export default function PrayerTimes() {
                         <p>{date()}</p>
                     </div>
                     <h2 className='nextTime'>
-                        <span>{name}<p className='counter'>0{formatTime(diff)}</p>
+                        <span>{name}<p className='counter'>{formatTime(diff)}</p>
                             {timings && name === timings.Sunrise ? (
                                 <span><span>{time}</span>'te doğuyor. <span>{formatTime(diff)}</span> kaldı.</span>
                             ) : (
