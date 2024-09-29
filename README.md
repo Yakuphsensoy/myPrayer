@@ -1,6 +1,28 @@
-# Getting Started with Create React App
+# MY PRAYER (Türkiye İllerine Göre Namaz Vakitleri Uygulaması)
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Bu proje, Türkiye'deki tüm illerin 5 vakit namaz saatlerini gösteren bir React uygulamasıdır. Uygulama, namaz vakitlerini zaman geçtikçe güncelleyerek kullanıcıya en güncel bilgileri sunmaktadır. Ayrıca mobil uyumlu tasarımı ile her türlü cihazda kolay kullanım sağlar.
+
+## Özellikler
+
+- Türkiye'nin tüm illerinin namaz vakitlerini gösterir.
+- Zamanla güncellenen dinamik namaz vakti bilgisi.
+- Mobil uyumlu, responsive tasarım.
+- API aracılığıyla canlı veri çekme.
+
+## Kullanılan Teknolojiler
+
+- **React**: Uygulama yapısı ve bileşen tabanlı geliştirme için kullanıldı.
+- **Axios**: API isteklerini gerçekleştirmek için kullanıldı.
+- **Moment.js**: Tarih ve saat işlemleri için kullanıldı.
+- **Aladhan API**: Namaz vakitlerini almak için kullanılan API. Detaylı bilgi için [Aladhan](https://aladhan.com/) sitesine göz atabilirsiniz.
+
+## API Hakkında
+
+Uygulamada kullanılan namaz vakti verileri, [Aladhan API](https://aladhan.com/) üzerinden alınmaktadır. API'yi kullanarak farklı bölgelerin namaz vakitlerini güncel olarak almak mümkündür.
+
+## Lisans
+
+Bu proje MIT lisansı ile lisanslanmıştır. Daha fazla bilgi için `LICENSE` dosyasını inceleyebilirsiniz.
 
 ## Available Scripts
 
