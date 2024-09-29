@@ -99,7 +99,7 @@ export default function PrayerTimes() {
         const currentTime = moment(moment(), 'HH:mm')
 
         if (currentTime.isBefore(moment(prayerTimes.Fajr, 'HH:mm'))) {
-            return { name: 'İmsak', time: prayerTimes.Fajr, diff: moment(prayerTimes.Fajr, 'HH:mm').diff(currentTime, 'minutes') }   // 01:12 - 05:12
+            return { name: 'Sabah', time: prayerTimes.Fajr, diff: moment(prayerTimes.Fajr, 'HH:mm').diff(currentTime, 'minutes') }   // 01:12 - 05:12
         }
         if (currentTime.isBefore(moment(prayerTimes.Sunrise, 'HH:mm'))) {
             return { name: 'Güneş', time: prayerTimes.Sunrise, diff: moment(prayerTimes.Sunrise, 'HH:mm').diff(currentTime, 'minutes') }
