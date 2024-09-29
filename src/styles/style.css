@@ -1,0 +1,79 @@
+html,
+body {
+    margin: 0;
+    background-color: #16423C;
+    justify-content: center;
+    align-items: center;
+    color: #C4DAD2;
+}
+
+.sides {
+    margin-top: 10%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.leftSide {
+    font-size: 40px;
+}
+
+.currentTime {
+    font-size: 50px;
+}
+
+.nextTime {
+    margin: 0;
+    padding: 0;
+}
+
+.nextTime span {
+    font-size: 65px;
+}
+
+.select {
+    border: none;
+    font-size: 30px;
+    background-color: transparent;
+    text-align: center;
+    color: #C4DAD2;
+}
+
+select option {
+    color: black;
+}
+
+.prayer h3 {
+    font-size: 30px;
+    box-shadow: #C4DAD2 0px 1.95px 0px;
+}
+
+.counter {
+    border-radius: 15px;
+    border: #C4DAD2 solid 1px;
+
+}
+
+.date {
+    font-size: 30px;
+    color: #C4DAD2;
+    font-weight: 600;
+}
+
+
+@media screen and (max-width: 900px) {
+    .main {
+        flex-direction: column;
+    }
+
+    .sides {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .leftSide,
+    .prayer {
+        width: 100%;
+    }
+}
