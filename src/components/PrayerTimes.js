@@ -104,8 +104,8 @@ export default function PrayerTimes() {
         if (currentTime.isBefore(moment(prayerTimes.Sunrise, 'HH:mm'))) {
             return { name: 'Güneş', time: prayerTimes.Sunrise, diff: moment(prayerTimes.Sunrise, 'HH:mm').diff(currentTime, 'minutes') }
         }
-        if (currentTime.isBefore(moment(prayerTimes.Duhr, 'HH:mm'))) {
-            return { name: 'Öğlen', time: prayerTimes.Duhr, diff: moment(prayerTimes.Duhr, 'HH:mm').diff(currentTime, 'minutes') }
+        if (currentTime.isBefore(moment(prayerTimes.Dhuhr, 'HH:mm'))) {
+            return { name: 'Öğle', time: prayerTimes.Dhuhr, diff: moment(prayerTimes.Dhuhr, 'HH:mm').diff(currentTime, 'minutes') }
         }
         if (currentTime.isBefore(moment(prayerTimes.Asr, 'HH:mm'))) {
             return { name: 'İkindi', time: prayerTimes.Asr, diff: moment(prayerTimes.Asr, 'HH:mm').diff(currentTime, 'minutes') }
