@@ -1,7 +1,10 @@
 import { useEffect, useState } from 'react';
 import { getPrayTimes } from '../helper/prayTimeHelper';
 import moment from 'moment';
+import hijri from 'moment-hijri';
 import "../styles/style.css";
+import { useNavigate } from 'react-router-dom';
+// import logo from "../assets/logo.png";
 
 const COORDINATES = [
     { name: 'Adana', latitude: 37.0, longitude: 35.3213 },
@@ -93,6 +96,8 @@ export default function PrayerTimes() {
     const [diff, setDiff] = useState()
     const [coordinate, setCoordinate] = useState(COORDINATES[0])
     const [timings, setTimings] = useState()
+    const navigate = useNavigate();
+
 
     function getPrayTimeRange(prayerTimes) {
         // Fajr, Sunrise, Duhr, Asr, Maghrib, Isha
@@ -127,7 +132,7 @@ export default function PrayerTimes() {
         const leftMinutes = minute % 60;
 
         const formattedHour = String(hour).padStart(2, '0');
-        const formattedMinutes = String(leftMinutes).padStart(2, '0');
+        const formattedMinutes = String(leftMinutes + 1).padStart(2, '0');
 
         return `${formattedHour}:${formattedMinutes}`;
     }
@@ -166,7 +171,12 @@ export default function PrayerTimes() {
         const day = moment().format('DD')
         const month = moment().format('MM')
         const year = moment().format('YYYY')
-        return `${day}.${month}.${year}`
+        return `${day}/${month}/${year}`
+    }
+
+    function hijriDate() {
+        const hijriDate = hijri().format('iD/iMM/iYYYY')
+        return hijriDate
     }
 
 
@@ -186,16 +196,23 @@ export default function PrayerTimes() {
 
     return (
         <div className="main">
+            <div className="header">
+                <ul className='headerTexts'>
+                    <li onClick={() => navigate("/NamesOfAllah")}>Allahın İsimleri</li>
+                    <li>Kur'an-ı Kerim</li>
+                    <li>Zikirmatik</li>
+                </ul>
+            </div>
             <div className="sides">
                 <div className="leftSide">
+                    <div className="date">
+                        <p>{date()} - {hijriDate()}</p>
+                    </div>
                     <select className="select" onChange={handleSetCoordinate}>
                         {COORDINATES.map((city, index) => (
                             <option value={city.name} label={city.name} key={index}>{city.name}</option>
                         ))}
                     </select>
-                    <div className="date">
-                        <p>{date()}</p>
-                    </div>
                     <h2 className='nextTime'>
                         <span>{name}<p className='counter'>{formatTime(diff)}</p>
                             {timings && name === timings.Sunrise ? (
