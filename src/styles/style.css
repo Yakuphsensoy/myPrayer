@@ -7,31 +7,8 @@ body {
     color: #C4DAD2;
 }
 
-.header {
-    box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
-    width: 100%;
-    height: 50px;
-}
-
-.headerTexts {
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
-    list-style-type: none;
-    font-size: 18px;
-    font-weight: 700;
-    color: #C4DAD2;
-
-}
-
-.headerTexts li {
-    cursor: pointer;
-}
-
-
-
 .sides {
-    margin-top: 7vw;
+    margin-top: 2vw;
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -84,16 +61,10 @@ select option {
     font-weight: 600;
 }
 
-.logo {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
+img {
+    width: 150px;
 
-.logo img {
-    width: 500px;
 }
-
 
 @media screen and (max-width: 900px) {
     .main {
@@ -103,6 +74,7 @@ select option {
     .sides {
         flex-direction: column;
         align-items: center;
+        gap: 150px;
     }
 
     .leftSide,
@@ -113,4 +85,6 @@ select option {
     .nextTime span {
         font-size: 40px;
     }
+
+
 }

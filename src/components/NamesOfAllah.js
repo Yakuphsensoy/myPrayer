@@ -1,6 +1,7 @@
 import React from 'react';
 import { useState } from 'react';
 import '../styles/namesOfAllah.css';
+import Header from './Header';
 
 const NAMES = [{ id: 1, name: "Allah", meaning: "Her şeyin sahibi olan tek ilah", arabic: "ٱللَّٰهُ" },
 { id: 2, name: "Er-Rahman", meaning: "Merhameti sonsuz olan", arabic: "ٱلرَّحْمَـٰنُ" },
@@ -107,13 +108,18 @@ export default function NamesOfAllah() {
     const [esmaUlHusna] = useState(NAMES);
     return (
         <div className='namesOfAllah'>
-            {esmaUlHusna.map((esma, idx) => (
-                <div key={esma.id} className='names'>
-                    <h2>{esma.arabic}</h2>
-                    <h3>{idx + 1}-{esma.name}</h3>
-                    <p>{esma.meaning}</p>
-                </div>
-            ))}
+            <div className="header">
+                <Header />
+            </div>
+            <div className="esmaUlHusna">
+                {esmaUlHusna.map((esma, idx) => (
+                    <div key={esma.id} className='names'>
+                        <h2>{esma.arabic}</h2>
+                        <h3>{idx + 1}-{esma.name}</h3>
+                        <p>{esma.meaning}</p>
+                    </div>
+                ))}
+            </div>
         </div>
     );
 }

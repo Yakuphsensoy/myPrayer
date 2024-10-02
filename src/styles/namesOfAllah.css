@@ -1,9 +1,3 @@
-.namesOfAllah {
-    display: grid;
-    grid-template-columns: repeat(11, 1fr);
-    gap: 10px;
-}
-
 .names {
     border: 1px solid #C4DAD2;
     display: flex;
@@ -12,8 +6,14 @@
     padding: auto;
 }
 
+.esmaUlHusna {
+    display: grid;
+    grid-template-columns: repeat(11, 1fr);
+    gap: 10px;
+}
+
 @media screen and (max-width: 900px) {
-    .namesOfAllah {
+    .esmaUlHusna {
         grid-template-columns: repeat(3, 1fr);
     }
 

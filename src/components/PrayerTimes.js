@@ -3,7 +3,8 @@ import { getPrayTimes } from '../helper/prayTimeHelper';
 import moment from 'moment';
 import hijri from 'moment-hijri';
 import "../styles/style.css";
-import { useNavigate } from 'react-router-dom';
+import Header from './Header.js';
+import Logo from "../assets/myprayer logo 4.svg";
 // import logo from "../assets/logo.png";
 
 const COORDINATES = [
@@ -96,7 +97,6 @@ export default function PrayerTimes() {
     const [diff, setDiff] = useState()
     const [coordinate, setCoordinate] = useState(COORDINATES[0])
     const [timings, setTimings] = useState()
-    const navigate = useNavigate();
 
 
     function getPrayTimeRange(prayerTimes) {
@@ -196,16 +196,11 @@ export default function PrayerTimes() {
 
     return (
         <div className="main">
-            <div className="header">
-                <ul className='headerTexts'>
-                    <li onClick={() => navigate("/NamesOfAllah")}>Allahın İsimleri</li>
-                    <li>Kur'an-ı Kerim</li>
-                    <li>Zikirmatik</li>
-                </ul>
-            </div>
+            <Header />
             <div className="sides">
                 <div className="leftSide">
                     <div className="date">
+                        <img src={Logo} alt="logo" srcset="" />
                         <p>{date()} - {hijriDate()}</p>
                     </div>
                     <select className="select" onChange={handleSetCoordinate}>
